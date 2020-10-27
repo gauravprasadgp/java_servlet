@@ -1,0 +1,83 @@
+.big_image {
+  height: 200px;
+  width: 100%;
+  background-image: url("https://thumbor.forbes.com/thumbor/960x0/https%3A%2F%2Fblogs-images.forbes.com%2Fjosephliu%2Ffiles%2F2019%2F06%2F1-office-1516329_1920-1200x299.jpg");
+}
+h2 {
+  font-family: "Courier New", Courier, monospace;
+}
+.profile_image {
+  border-radius: 100%;
+  border: 2px solid #28babc;
+}
+.image_cont {
+  margin-top: -8%;
+}
+button {
+  background-color: #28babc;
+  border: 0.5px solid black;
+}
+a {
+  color: #28babc;
+}
+.right {
+  /* float: right; */
+  /* margin-top:5%; */
+}
+.feature_image {
+  height: 100px;
+  width: 100px;
+  float: left;
+  padding-right: 5px;
+}
+.feature_p {
+  border-bottom: 1px dashed #28babc;
+}
+.activity_p {
+  border-bottom: 1px dashed #28babc;
+}
+.applies_images {
+  max-height: 80px;
+  max-width: 200px;
+}
+#features {
+}
+
+.fa {
+  padding: 20px;
+  font-size: 30px;
+  width: 30px;
+  text-align: center;
+  text-decoration: none;
+  border-radius: 50%;
+}
+.fa:hover {
+  opacity: 0.7;
+}
+.fa-facebook {
+  background: #3b5998;
+  color: white;
+}
+.fa-google {
+  background: #dd4b39;
+  color: white;
+}
+.fa-linkedin {
+  background: #007bb5;
+  color: white;
+}
+
+.fa-instagram {
+  background: #125688;
+  color: white;
+}
+
+@media screen and (min-width: 768px) {
+  .image_cont {
+    margin-top: -4%;
+  }
+  .right {
+    margin-right: 65%;
+    margin-top: -7%;
+  }
+}

@@ -1,0 +1,209 @@
+<html>
+<head>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css" integrity="sha384-JcKb8q3iqJ61gNV9KGb8thSsNjpSL0n8PARn9HuZOnIxN0hoP+VmmDGMN5t9UJ0Z" crossorigin="anonymous">
+</head>
+<body>
+    <nav class="navbar navbar-expand-lg navbar-light bg-light">
+        <a class="navbar-brand" href="#"><i>LinkedUp</i></a>
+        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+          <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse" id="navbarNav">
+          <ul class="navbar-nav">
+            <li class="nav-item active">
+              <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+            </li>
+          </ul>
+        </div>
+      </nav>
+    <style>
+        body {
+            background-color: #fff;
+        }
+
+        #name,
+        #fullname,
+        #in,
+        #password,
+        #email,
+        #job_pref,
+        #age {
+            width: 350px;
+            height: 50px;
+            border-radius: 50px;
+            border: 5px solid #28BABC;
+            padding-left: 10px;
+
+        }
+
+        #su {
+            width: 100px;
+            height: 50px;
+            background-color: #28BABC;
+            border: 5px;
+            border-radius: 5px;
+            color: black;
+        }
+
+        #suu {
+            width: 100px;
+            height: 50px;
+            background-color: #FF1010;
+            border: 5px;
+            border-radius: 5px;
+            color: black;
+        }
+        .left{
+            float:left;
+            margin-left: 5%;
+        }
+        .right{
+            float:right;
+            margin-right: 5%;
+        }
+        .footer{    
+            position: fixed;
+    bottom: 30;
+    width: 100%;
+        }
+    </style>
+    <script>
+        function validateform1() {
+            var name = document.getElementById("name").value;
+            if (name === "") {
+                document.getElementById("a").innerHTML = "Enter a value";
+                document.getElementById("a").style.color = "black";
+
+            }
+            else if (name.length < 3) {
+                document.getElementById("a").innerHTML = "Username should contain minimum 3 characters";
+                document.getElementById("a").style.color = "black";
+            }
+            else {
+                document.getElementById("a").innerHTML = "";
+            }
+            return true;
+        }
+        function validateform2() {
+            var password = document.getElementById("password").value;
+            if (password.length < 6) {
+                document.getElementById("b").innerHTML = "Password should contain minimum 6 characters/alphabets";
+                document.getElementById("b").style.color = "black";
+            }
+            else {
+                document.getElementById("b").innerHTML = "";
+            }
+            return true;
+
+        }
+        function validateform3() {
+            var email = document.getElementById("email").value;
+            // if (email.indexOf("@") > -1 && email.indexOf(".") > -1) {
+                if (/^[a-zA-Z0-9._-]+@[a-zA-Z0-9.-]+\.[a-zA-Z]{2,4}$/.test(email))
+                {document.getElementById("c").innerHTML = "";
+            }
+            else {
+                document.getElementById("c").innerHTML = "Please enter correct mail id";
+                document.getElementById("c").style.color = "black";
+            }
+            return true;
+
+        }
+        function validateform4() {
+            var age = document.getElementById("age").value;
+            if (age >= 10 && age < 90) {
+                document.getElementById("d").innerHTML = "";
+            }
+            else {
+                document.getElementById("d").innerHTML = "Age should be between 10 and 90";
+                document.getElementById("d").style.color = "black";
+            }
+            return true;
+        }
+        function validateform5() {
+            var job_pref = document.getElementById("job_pref").value;
+            if (job_pref === "") {
+                document.getElementById("e").innerHTML = "Job preferences cannot be empty";
+                document.getElementById("e").style.color = "black";
+
+            }
+            else {
+                document.getElementById("e").innerHTML = "";
+            }
+            return true;
+
+        }
+        function validateform1_full() {
+            var fullname = document.getElementById("fullname").value;
+            if (fullname === "") {
+                document.getElementById("f").innerHTML = "Full Name cannot be empty";
+                document.getElementById("f").style.color = "black";
+
+            }
+            else {
+                document.getElementById("f").innerHTML = "";
+            }
+            return true;
+        }
+        function valid() {
+            var name = document.getElementById("name").value;
+            var fullname = document.getElementById("fullname").value;
+            var password = document.getElementById("password").value;
+            var email = document.getElementById("email").value;
+            var age = document.getElementById("age").value;
+            var job_pref = document.getElementById("job_pref").value;
+            if (name === "" || password === "" || email === "" || age === "" || job_pref === "" || fullname === "") {
+
+                alert("Please fill the data correctly");
+            }
+            else {
+                alert("Success,You have entered data correctly");
+                window.open("http://localhost:5500/index.html")
+
+            }
+        }
+    </script>
+
+    <body> <br>
+        <div align="center">
+            <h2>Edit Your Profile</h2>
+        </div>
+        <form align="center">
+            <div class="left">
+                <span style="font-weight:bold;color:#000">Username:</span> <input id="name" onblur="validateform1()"
+                type="text">
+            <div id="a"> </div><br><br>
+            </div>
+            <div class="right">
+                <span style="font-weight:bold;color:#000">Full Name:</span> <input id="fullname"
+                onblur="validateform1_full()" type="text">
+            <div id="f"></div><br><br>
+            </div>
+           <div class="left">
+            <span style="font-weight:bold;color:#000">Password:</span> &nbsp;<input id="password"
+            onblur="validateform2()" type="password">
+        <div id="b"></div><br><br>
+           </div>
+           <div class="right">
+            <span style="font-weight:bold;color:#000">Email:</span> &emsp;&nbsp;&nbsp;<input id="email"
+            onblur="validateform3()" type="Email">
+        <div id="c"></div><br><br>
+           </div>
+            <div class="left">
+                <span style="font-weight:bold;color:#000">Age:</span> &emsp;&emsp;&nbsp;<input id="age"
+                onblur="validateform4()" type="Age">
+            <div id="d"></div><br><br>
+            </div>
+           <div class="right">
+            <span style="font-weight:bold;color:#000">Job Preferences:</span> &nbsp;<input id="job_pref"
+            onblur="validateform5()" type="job_profile">
+        <div id="e"></div><br><br>
+           </div>
+           <div class="footer">
+            <input id="su" type="submit" value="Submit" onclick="valid()">&emsp;&nbsp;<input id="suu" type="reset"
+            name="reset">
+           </div>
+        </form>
+    </body>
+
+</html>
